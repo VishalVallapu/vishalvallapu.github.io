@@ -1,29 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vishal Vallapu</title>
-    <link rel="stylesheet" href="style.css">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+
 </head>
+
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-    </header>
-    <section>
-        <h2>About Me</h2>
-        <p> Data Enthusiast | Data Analyst, Data Engineer, Data Scientist |Software Engineering| Driving Insights Through Meticulous Analysis and Innovative Solutions
-.</p>
+    <nav id="desktop-nav">
+        <div class="logo">Vishal Vallapu</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#aboutme">About Me</a></li>
+                <li><a href="#skills">Skills & Tools</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Vishal Vallapu</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#aboutme" onclick="toggleMenu()">About Me</a></li>
+                <li><a href="#skills" onclick="toggleMenu()">Skills & Tools</a></li>
+                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+
+    <section id="profile">
+        <div class="section__pic-container">
+            <img src="./impfiles/profile-pic.png" alt="Keerthi Malathkar Profile Picture" />
+
+        </div>
+        <div class="section__text">
+            <p class="section__text_p1">Hello, I'm</p>
+            <h1 class="title">VISHAL VALLAPU, Data Enthusiast | Data Analyst, Data Engineer, Data Scientist | Driving Insights Through Meticulous Analysis and Innovative Solutions
+</h1>
+            <p class="section__text_p2">Capital Planning Student Assistant at University of North Texas. Previously
+                worked at Tata Consultancy Services</p><br>
+            <div class="btn-container">
+                <button class="btn btn-color-2" onclick="window.open('./impfiles/KeerthiMalathkar_Resume.pdf')">Download
+                    CV</button>
+                <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+            </div>
+            <div class="'socials-container">
+                <img src="./impfiles/linkedin.png" alt="My Linkedin Profile" class="icon"
+                    onclick="location.href='https://www.linkedin.com/in/keerthi-malathkar-51aa7114b/'" />
+                <img src="./impfiles/github.png" alt="My Github Profile" class="icon"
+                    onclick="location.href='https://github.com/Kmalathkar1296/'" />
+            </div>
     </section>
-    <section>
-        <h2>Projects</h2>
-        <ul>
-            <li><a href="https://github.com/your-username/project1">Project 1</a></li>
-            <li><a href="https://github.com/your-username/project2">Project 2</a></li>
-        </ul>
+
+    <section id="aboutme">
+        <h1 class="title">About Me</h1><br>
+        <div class="section-container"></div>
+        <div class="section__text">
+            <p class="section__text_p1">
+                Originally from Hyderabad, India, In 2019 I started my career as a System Engineer at Tata Consultancy
+                Services, gaining four years of diverse tools experience.
+                Automated complete administration and configuration tasks on Apache HTTPD Web Server, JBoss and
+                WebLogicapplication servers using Jenkins and Ansible for 250+ applications.
+                As a shift lead took ownership for ensuring the smooth operations, scheduling and monitoring the team
+                performance.</p><br>
+            <p class="section__text_p1">Later, I am pursuing a master's in Advanced Data Analytics at the University of
+                North Texas.
+                In my recent role as a Capital Planning Student Assistant, I adeptly utilized Power Apps and Power
+                Automate to create an application for data collection during site inspections, automated data flow to
+                Excel. Provided business insights using the Power BI dashboard.
+                Now in 2024, I’m excited to be taking on a new challenge with data analytics skills which I have earned
+                during my master's degree to help entrepreneurs to take business driven decisions.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h1 class="title">Skills & Tools</h1>
+        <div class="section-container"></div>
+        <div class="about-details-container">
+            <div class="about-containers">
+                <div class="details-container">
+                    <img src="./impfiles/programming.png" class="icon">
+                    <h3>Programming</h3>
+                    <p class="section__text_p1">Python - Scikit-learn, NumPy, Pandas, Keras, R, MySQL, HTML, CSS,
+                        JavaScript, Data Structure</p>
+                    <div class="details-container">
+                        <img src="./impfiles/data_viz.png" class="icon" />
+                        <h3>Data Visualization</h3>
+                        <p class="section__text_p1">Tableau, Power BI, Excel, Looker Studio, Matplotlib, Seaborn</p>
+                        <div class="details-container">
+                            <img src="./impfiles/modelling.png" class="icon" />
+                            <h3>Modelling</h3>
+                            <p class="section__text_p1">Linear Regression, ANOVA, Logistic regression, Decision trees,
+                                Random Forest, Simple RNN</p>
+                            <div class="details-container">
+                                <img src="./impfiles/tools.png" class="icon" />
+                                <h3>Tools</h3>
+                                <p class="section__text_p1">Google Cloud Platform, Linux, Anaplan, Office365, Power
+                                    Automate, SAS, TensorFlow, Apache Spark, Hadoop, IBM BAW, Docker, Jenkins,
+                                    Kubernetes, Ansible, Git, Rapid Miner, Power Apps</p>
+                                <div class="details-container">
+                                    <img src="./impfiles/core.png" class="icon" />
+                                    <h3>Core Skills</h3>
+                                    <p class="section__text_p1">Active listening, Assertiveness, Empathy, Conflict
+                                        management, Restorative, Learner, Intellection, Connectedness, Shift Lead</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h1 class="title"><span>Work Experience</span></h1><br><br>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <div class="details-container">
+                    <div class="article-container">
+                        <article>
+                            <div>
+                                <h3>Capital Planning Student Asst</h3>
+                                <p>June 2023 - Present</p>
+                            </div>
+                        </article>
+                        <article>
+                            <div>
+                                <h3>University of North Texas</h3>
+                                <p>Denton, Texas</p>
+                            </div>
+                        </article>
+                        <article>
+                            <div>
+                                <h3>Part- Time</h3>
+                            </div>
+                        </article>
+                    </div><br><br>
+                    <div class="article-container">
+                        <article>
+                            <div>
+                                <h3>System Engineer</h3>
+                                <p>January 2019 - December 2022</p>
+                            </div>
+                        </article>
+                        <article>
+                            <div>
+                                <h3>Tata Consultancy Services</h3>
+                                <p>Hyderabad, India</p>
+                            </div>
+                        </article>
+                        <article>
+                            <div>
+                                <h3>Full- Time</h3>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+            </div>
+
+    </section>
+
+    <section id="projects">
+        <h1 class="title">Projects</h1>
+        <div class="section-container">
+        <div class="details-container color-container">
+            <div class="article-container">
+                <img src="./impfiles/Layoff_Erase.jpg" alt="Project 1" class="project-img" />
+            </div>
+            <div>
+                <h3 class="experience-sub-title project-title">Lay-off Analysis</h3>
+                <p> Using the ANOVA and Linear Regression Statistical techniques, analyzed the layoff count across
+                    different industries and countries.</p>
+            </div>
+            <div class="btn-container">
+                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/Kmalathkar1296/Lay-off-Analysis/'">
+                    Github
+                </button>
+            </div>
+        </div><br><br>
+        <div class="details-container color-container">
+            <div class="article-container">
+                <img src="./impfiles/seoul.png" alt="Project 2" class="project-img" />
+            </div>
+            <h3 class="experience-sub-title project-title">Seoul Bike Riding Demand Forecast</h3>
+            <p>Using public dataset access provided by UCI Machine learning Repository public dataset, predicted the
+                bike demand using the Linear regression and Decision Tree.</p>
+            <div class="btn-container">
+                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/Kmalathkar1296/Seoul-Bike-Riding-Demand-Prediction/'">
+                    Github
+                </button>
+            </div>
+        </div><br><br>
+        <div class="details-container color-container">
+            <div class="article-container">
+                <img src="./impfiles/OperatingBudget.png" alt="Operating Budget of Dallas" class="project-img" />
+            </div>
+            <h3 class="experience-sub-title project-title">Operating Budget of Dallas</h3>
+            <p>Understanding the Operating budget of the city Dallas using the powerful visualization tool Tableau and
+                transformed the data using Tableau Prep Builder.</p>
+            <div class="btn-container">
+                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/Kmalathkar1296/Operating-Budget-of-Dallas/'">
+                    Github
+                </button>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <p class="section__text__p1">Get in Touch</p>
+        <h1 class="title">Contact Me</h1>
+        <div class="contact-info-upper-container">
+            <div class="contact-info-container">
+                <img src="./impfiles/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+                <p><a href="mailto:examplemail@gmail.com">keerthimalathkar@gmail.com</a></p>
+            </div>
+            <div class="contact-info-container">
+                <img src="./impfiles/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+                <p><a href="https://www.linkedin.com/in/keerthi-malathkar-51aa7114b/">LinkedIn</a></p>
+            </div>
+        </div>
     </section>
     <footer>
-        <p>Contact: <a href="mailto:vishalvallapu@gmail.com">vishalvallapu@gmail.com</a></p>
+        <nav>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="#aboutme">About Me</a></li>
+                    <li><a href="#skills">Skills & Tools</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <p>Copyright &#169; 2023 Keerthi Malathkar. All Rights Reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
