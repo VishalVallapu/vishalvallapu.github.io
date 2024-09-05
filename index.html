@@ -1,247 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-
+    <title>Vishal Vallapu - Portfolio</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        
+        /* Navigation styles */
+        nav {
+            background-color: #2c3e50;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            color: #ecf0f1;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        /* Section styles */
+        section {
+            padding: 4rem 2rem;
+            margin-top: 60px;
+        }
+        
+        .title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #2c3e50;
+        }
+        
+        /* Profile section */
+        #profile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: #3498db;
+            color: #fff;
+        }
+        
+        .section__pic-container {
+            margin-right: 2rem;
+        }
+        
+        .section__pic-container img {
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .section__text {
+            max-width: 600px;
+        }
+        
+        .section__text_p1 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section__text_p2 {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn-container {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-color-1 {
+            background-color: #2ecc71;
+            color: #fff;
+        }
+        
+        .btn-color-2 {
+            background-color: #e74c3c;
+            color: #fff;
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+        }
+        
+        .socials-container {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .icon {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .icon:hover {
+            transform: scale(1.1);
+        }
+        
+        /* About Me section */
+        #aboutme {
+            background-color: #ecf0f1;
+        }
+        
+        /* Skills section */
+        #skills {
+            background-color: #fff;
+        }
+        
+        .about-containers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        
+        .details-container {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            width: calc(50% - 1rem);
+        }
+        
+        .details-container:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Experience section */
+        #experience {
+            background-color: #f4f4f4;
+        }
+        
+        .experience-details-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        
+        .article-container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: calc(50% - 1rem);
+        }
+        
+        /* Projects section */
+        #projects {
+            background-color: #fff;
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact section */
+        #contact {
+            background-color: #2c3e50;
+            color: #fff;
+        }
+        
+        .contact-info-upper-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .contact-info-container {
+            display: flex;
+            align-items: center;
+            margin: 1rem;
+        }
+        
+        .contact-icon {
+            margin-right: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+            
+            .details-container,
+            .article-container {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
-
 <body>
-    <nav id="desktop-nav">
+    <nav>
         <div class="logo">Vishal Vallapu</div>
-        <div>
-            <ul class="nav-links">
-                <li><a href="#aboutme">About Me</a></li>
-                <li><a href="#skills">Skills & Tools</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-    <nav id="hamburger-nav">
-        <div class="logo">Vishal Vallapu</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu-links">
-                <li><a href="#aboutme" onclick="toggleMenu()">About Me</a></li>
-                <li><a href="#skills" onclick="toggleMenu()">Skills & Tools</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-            </div>
-        </div>
+        <ul class="nav-links">
+            <li><a href="#aboutme">About Me</a></li>
+            <li><a href="#skills">Skills & Tools</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
 
-  
-          <section id="profile">
+    <section id="profile">
         <div class="section__pic-container">
-            <img src="./impfiles/profile-pic.JPEG" alt="profile-pic" width="300" height="400"/>
-
-        </div> <br>
+            <img src="./impfiles/profile-pic.JPEG" alt="profile-pic" width="300" height="300"/>
+        </div>
         <div class="section__text">
-            <p class="section__text_p1">Data Enthusiast, Data Analyst, Data Engineer, Data Scientist | Driving Insights Through Meticulous Analysis and Innovative Solutions.</p><br>
-            <p class="section__text_p2"> Graduate student at University of North Texas, Ex-Data Analyst/ Software Engineer @ Ministry of Railway, Govt of India.</p>
+            <h1>Vishal Vallapu</h1>
+            <p class="section__text_p1">Data Enthusiast, Data Analyst, Data Engineer, Data Scientist | Driving Insights Through Meticulous Analysis and Innovative Solutions.</p>
+            <p class="section__text_p2">Graduate student at University of North Texas, Ex-Data Analyst/ Software Engineer @ Ministry of Railway, Govt of India.</p>
             <div class="btn-container">
                 <button class="btn btn-color-2" onclick="window.open('./Vishal Vallapu_Resume ft.pdf')">Resume</button>
-                <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+                <button class="btn btn-color-1" onclick="location.href='#contact'">Contact Info</button>
             </div>
-    
-            <div class="'socials-container">
-                <img src="./impfiles/linkedin.png" alt="My Linkedin Profile" class="icon"
-                    onclick="location.href='https://www.linkedin.com/in/vishal-vallapu-1a6632b6?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BNMtdakXsS6SmBaJn27AGjw%3D%3D'" />
-                    <a href="https://www.linkedin.com/in/vishal-vallapu-1a6632b6?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BNMtdakXsS6SmBaJn27AGjw%3D%3D" target="_blank">LinkedIn</a>
-                <img src="./impfiles/github.png" alt="My Github Profile" class="icon"
-                    onclick="location.href='https://github.com/VishalVallapu'" />
-                     <a href="https://github.com/VishalVallapu" target="_blank">GitHub</a>
+            <div class="socials-container">
+                <a href="https://www.linkedin.com/in/vishal-vallapu-1a6632b6" target="_blank">
+                    <img src="./impfiles/linkedin.png" alt="My LinkedIn Profile" class="icon" />
+                </a>
+                <a href="https://github.com/VishalVallapu" target="_blank">
+                    <img src="./impfiles/github.png" alt="My Github Profile" class="icon" />
+                </a>
             </div>
-    </section>
-    
-    <section id="aboutme">
-        <h1 class="title">About Me</h1><br>
-        <div class="section-container"></div>
-        <div class="section__text">
-            <p class="section__text_p1">
-                I am from Hyderabad,India. I finished my Bachelors of Engineering in Computer Science from Mahatma Gandhi Institute of Technology in 2018.After bachelors, I started my career as a Data Analyst at Winfocus Solutions Pvt Ltd and Ministry of Railways(Govt of India) as a software engineer where my work primarily focused on SLAM(System for Locomotive Asset Management) tool , gaining four years of diverse tools experience.
-                .</p>
-            <p class="section__text_p1">In 2022,I flew to USA for pursuing master's in Advanced Data Analytics at the University of
-                North Texas. Now I’m excited to leverage analytical skills and technical expertise to drive data-driven decision-making.</p>
         </div>
-    </section> 
-  <div>  <section id="skills">
-        <h1 class="title">Skills & Tools</h1>
-        <div class="section-container"></div>
-        <div class="about-details-container">
-            <div class="about-containers">
-                <div class="details-container">
-                    <img src="./impfiles/programming.png" class="icon">
-                    <h3>Programming</h3>
-                    <p class="section__text_p1">Python - Scikit-learn, NumPy, Pandas, Keras, R, MySQL, HTML, NLP,
-                         Data Structure</p>
-                    <div class="details-container">
-                        <img src="./impfiles/data_viz.png" class="icon" />
-                        <h3>Visualization, Analytics and Big Data Tools</h3>
-                        <p class="section__text_p1">Tableau, Microsoft Power BI, MS Excel, Hadoop, Spark, Amazon EMR, AWS Lake formation,Redshift,Kinesis,AWS Glue,Apache Kafka,Quicksight,Athena,Open Search service,matplotlib,seaborn,SSIS ,SSRS, SSMS</p>
-                        <div class="details-container">
-                            <img src="./impfiles/modelling.png" class="icon" />
-                            <h3>Data Modelling</h3>
-                            <p class="section__text_p1"> Dimensional Modelling,Star schema,snowflake schema,Relational data modelling, Data Vault,Data warehouse methodologies:Kimball,Inmon</p>
-                            <div class="details-container">
-                                <img src="./impfiles/tools.png" class="icon" />
-                                <h3>Tools</h3>
-                                <p class="section__text_p1">Microsoft Office365,Airflow,Nifi,Apache Spark, Hadoop,Jenkins,
-                                   Celery, Git, Rapid Miner,</p>
-                                <div class="details-container">
-                                    <img src="./impfiles/core.png" class="icon" />
-                                    <h3>Core Skills</h3>
-                                    <p class="section__text_p1">Active listening,Critical thinking, attention to detail, adaptability, and a strong work ethic. Highly organized with the ability to manage projects efficiently and meet deadlines consistently, Communication, Team player, Leadership , Time-Management, Willingness to learn and adapt to any new environment/tool, Assertiveness, Empathy, Conflict
-                                        management,Shift Lead</p>
+    </section>
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <section id="aboutme">
+        <h2 class="title">About Me</h2>
+        <div class="section__text">
+            <p>I am from Hyderabad, India. I finished my Bachelors of Engineering in Computer Science from Mahatma Gandhi Institute of Technology in 2018. After bachelors, I started my career as a Data Analyst at Winfocus Solutions Pvt Ltd and Ministry of Railways (Govt of India) as a software engineer where my work primarily focused on SLAM (System for Locomotive Asset Management) tool, gaining four years of diverse tools experience.</p>
+            <p>In 2022, I flew to USA for pursuing master's in Advanced Data Analytics at the University of North Texas. Now I'm excited to leverage analytical skills and technical expertise to drive data-driven decision-making.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="title">Skills & Tools</h2>
+        <div class="about-containers">
+            <div class="details-container">
+                <img src="./impfiles/programming.png" class="icon">
+                <h3>Programming</h3>
+                <p>Python - Scikit-learn, NumPy, Pandas, Keras, R, MySQL, HTML, NLP, Data Structure</p>
+            </div>
+            <div class="details-container">
+                <img src="./impfiles/data_viz.png" class="icon" />
+                <h3>Visualization, Analytics and Big Data Tools</h3>
+                <p>Tableau, Microsoft Power BI, MS Excel, Hadoop, Spark, Amazon EMR, AWS Lake formation, Redshift, Kinesis, AWS Glue, Apache Kafka, Quicksight, Athena, Open Search service, matplotlib, seaborn, SSIS, SSRS, SSMS</p>
+            </div>
+            <div class="details-container">
+                <img src="./impfiles/modelling.png" class="icon" />
+                <h3>Data Modelling</h3>
+                <p>Dimensional Modelling, Star schema, snowflake schema, Relational data modelling, Data Vault, Data warehouse methodologies: Kimball, Inmon</p>
+            </div>
+            <div class="details-container">
+                <img src="./impfiles/tools.png" class="icon" />
+                <h3>Tools</h3>
+                <p>Microsoft Office365, Airflow, Nifi, Apache Spark, Hadoop, Jenkins, Celery, Git, Rapid Miner</p>
             </div>
         </div>
     </section>
-  </div> <br>
 
     <section id="experience">
-        <h2 class="title"><span>Work Experience</span></h2>
+        <h2 class="title">Work Experience</h2>
         <div class="experience-details-container">
-            <div class="about-containers">
-                <div class="details-container">
-                    <div class="article-container">
-                        <article>
-                            <div>
-                                <h3>Data Analyst</h3>
-                                <p>Oct 2018 - July 2022</p>
-                            </div>
-                        </article>
-                        <article>
-                            <div>
-                                <h3>Winfocus Solutions Pvt Ltd</h3>
-                                <p>Hyd,India</p>
-                            </div>
-                        </article>
-                        <article>
-                            <div>
-                                <h3>Full- Time</h3>
-                            </div>
-                        </article>
-                    </div><br><br>
-                    <div class="article-container">
-                        <article>
-                            <div>
-                                <h3>Software Engineer</h3>
-                                <p>July 2020 - July 2022</p>
-                            </div>
-                        </article>
-                        <article>
-                            <div>
-                                <h3>Ministry of Railways,Govt of India</h3>
-                                <p>Hyderabad, India</p>
-                            </div>
-                        </article>
-                        <article>
-                            <div>
-                                <h3>Contract</h3>
-                            </div>
-                        </article>
-
-                    </div>
-
-                </div>
+            <div class="article-container">
+                <h3>Data Analyst</h3>
+                <p>Oct 2018 - July 2022</p>
+                <p>Winfocus Solutions Pvt Ltd</p>
+                <p>Hyd, India</p>
+                <p>Full-Time</p>
             </div>
-
+            <div class="article-container">
+                <h3>Software Engineer</h3>
+                <p>July 2020 - July 2022</p>
+                <p>Ministry of Railways, Govt of India</p>
+                <p>Hyderabad, India</p>
+                <p>Contract</p>
+            </div>
+        </div>
     </section>
 
     <section id="projects">
-        <h1 class="title">Projects</h1>
-        <div class="section-container">
-        <div class="details-container color-container">
-            <div class="article-container">
+        <h2 class="title">Projects</h2>
+        <div class="about-containers">
+            <div class="details-container">
                 <img src="./impfiles/netflix.jpeg" alt="Project 1" class="project-img" />
-            </div>
-            <div>
-                <h3 class="experience-sub-title project-title">Netflix Data Analysis</h3>
-                <p> Created an interactive dashboard using Netflix dataset analyzing top genres, descriptions, duration, release year, and various other variables in Tableau.</p>
-            </div>
-            <div class="btn-container">
-                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/VishalVallapu/Netflix-Data-Analysis/'">
+                <h3>Netflix Data Analysis</h3>
+                <p>Created an interactive dashboard using Netflix dataset analyzing top genres, descriptions, duration, release year, and various other variables in Tableau.</p>
+                <button class="btn btn-color-2" onclick="window.open('https://github.com/VishalVallapu/Netflix-Data-Analysis/')">
                     Github
                 </button>
             </div>
-        </div><br><br>
-        <div class="details-container color-container">
-            <div class="article-container">
+            <div class="details-container">
                 <img src="./impfiles/american airlines.png" alt="Project 2" class="project-img" />
-            </div>
-            <h3 class="experience-sub-title project-title">American Airlines Baggage handling system</h3>
-            <p>Aimed to address the challenges faced by an airline company with a shortage of personnel and equipment in its BHS.
-.Predicted and analyzed the number of baggage items that will arrive for any given outbound flight in Python using Xgboost,decision tree algorithms
-.</p>
-            <div class="btn-container">
-                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/VishalVallapu/American-Airlines-BHS/'">
+                <h3>American Airlines Baggage handling system</h3>
+                <p>Aimed to address the challenges faced by an airline company with a shortage of personnel and equipment in its BHS. Predicted and analyzed the number of baggage items that will arrive for any given outbound flight in Python using Xgboost, decision tree algorithms.</p>
+                <button class="btn btn-color-2" onclick="window.open('https://github.com/VishalVallapu/American-Airlines-BHS/')">
                     Github
                 </button>
             </div>
-        </div><br><br>
-        <div class="details-container color-container">
-            <div class="article-container">
+            <div class="details-container">
                 <img src="./impfiles/pwc.jpeg" alt="PWC Power BI Internship" class="project-img" />
-            </div>
-            <h3 class="experience-sub-title project-title">PWC Power BI Internship</h3>
-            <p>Demonstrated expertise in data visualization through the creation of Power BI dashboards that effectively conveyed KPIs, showcasing the ability to respond to client requests with well-designed solutions.•	Leveraged analytical problem-solving skills to examine HR data, particularly focusing on gender-related KPIs, and identified root causes for gender balance issues at the executive management level, highlighting a commitment to data-driven decision-making.</p>
-            <div class="btn-container">
-                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/VishalVallapu/PWC-Power-BI-internship/'">
+                <h3>PWC Power BI Internship</h3>
+                <p>Demonstrated expertise in data visualization through the creation of Power BI dashboards that effectively conveyed KPIs, showcasing the ability to respond to client requests with well-designed solutions. Leveraged analytical problem-solving skills to examine HR data, particularly focusing on gender-related KPIs, and identified root causes for gender balance issues at the executive management level, highlighting a commitment to data-driven decision-making.</p>
+                <button class="btn btn-color-2" onclick="window.open('https://github.com/VishalVallapu/PWC-Power-BI-internship/')">
                     Github
                 </button>
             </div>
-        </div>
         </div>
     </section>
 
     <section id="contact">
-        <p class="section__text__p1">Get in Touch</p>
-        <h1 class="title">Contact Me</h1>
+        <h2 class="title">Contact Me</h2>
         <div class="contact-info-upper-container">
             <div class="contact-info-container">
                 <img src="./impfiles/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-                <p><a href="mailto:examplemail@gmail.com">vishalvallapu@gmail.com</a></p>
+                <p><a href="mailto:vishalvallapu@gmail.com">vishalvallapu@gmail.com</a></p>
             </div>
             <div class="contact-info-container">
                 <img src="./impfiles/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-                <p><a href="https://www.linkedin.com/in/vishal-v-1a6632b6?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bm9hBR1X7SAuOcM5XirS24g%3D%3D/">LinkedIn</a></p>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <nav>
-            <div class="nav-links-container">
-                <ul class="nav-links">
-                    <li><a href="#aboutme">About Me</a></li>
-                    <li><a href="#skills">Skills & Tools</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-        <p>Copyright &#169; 2023 Vishal Vallapu. All Rights Reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-
-</html>
+                <p><a href="https://www.linkedin.com/in/vishal-v-1a6632b6" target="_blank">LinkedIn</a></p
