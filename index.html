@@ -16,21 +16,22 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f4f4f4;
+            background-color: #ffffff;
         }
         
         /* Navigation styles */
         nav {
-            background-color: #2c3e50;
+            background-color: #f8f9fa;
             padding: 1rem;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         
         .logo {
-            color: #ecf0f1;
+            color: #007bff;
             font-size: 1.5rem;
             font-weight: bold;
         }
@@ -46,13 +47,13 @@
         }
         
         .nav-links a {
-            color: #ecf0f1;
+            color: #333;
             text-decoration: none;
             transition: color 0.3s ease;
         }
         
         .nav-links a:hover {
-            color: #3498db;
+            color: #007bff;
         }
         
         /* Section styles */
@@ -65,7 +66,7 @@
             font-size: 2.5rem;
             margin-bottom: 2rem;
             text-align: center;
-            color: #2c3e50;
+            color: #007bff;
         }
         
         /* Profile section */
@@ -74,8 +75,7 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            background-color: #3498db;
-            color: #fff;
+            background-color: #f8f9fa;
         }
         
         .section__pic-container {
@@ -84,7 +84,12 @@
         
         .section__pic-container img {
             border-radius: 50%;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .section__pic-container img:hover {
+            transform: scale(1.05);
         }
         
         .section__text {
@@ -113,21 +118,23 @@
             border-radius: 5px;
             font-size: 1rem;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
         }
         
         .btn-color-1 {
-            background-color: #2ecc71;
-            color: #fff;
+            background-color: #007bff;
+            color: #ffffff;
         }
         
         .btn-color-2 {
-            background-color: #e74c3c;
-            color: #fff;
+            background-color: transparent;
+            color: #007bff;
+            border: 2px solid #007bff;
         }
         
         .btn:hover {
-            opacity: 0.9;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
         }
         
         .socials-container {
@@ -147,12 +154,12 @@
         
         /* About Me section */
         #aboutme {
-            background-color: #ecf0f1;
+            background-color: #ffffff;
         }
         
         /* Skills section */
         #skills {
-            background-color: #fff;
+            background-color: #f8f9fa;
         }
         
         .about-containers {
@@ -162,22 +169,23 @@
         }
         
         .details-container {
-            background-color: #f8f9fa;
+            background-color: #ffffff;
             border-radius: 10px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
             width: calc(50% - 1rem);
         }
         
         .details-container:hover {
             transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 123, 255, 0.2);
         }
         
         /* Experience section */
         #experience {
-            background-color: #f4f4f4;
+            background-color: #ffffff;
         }
         
         .experience-details-container {
@@ -187,31 +195,41 @@
         }
         
         .article-container {
-            background-color: #fff;
+            background-color: #f8f9fa;
             border-radius: 10px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             width: calc(50% - 1rem);
+            transition: all 0.3s ease;
+        }
+        
+        .article-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 123, 255, 0.2);
         }
         
         /* Projects section */
         #projects {
-            background-color: #fff;
+            background-color: #f8f9fa;
         }
         
         .project-img {
             width: 100%;
-            height: 200px;
+            height: 150px;
             object-fit: cover;
             border-radius: 10px;
             margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .project-img:hover {
+            transform: scale(1.05);
         }
         
         /* Contact section */
         #contact {
-            background-color: #2c3e50;
-            color: #fff;
+            background-color: #ffffff;
         }
         
         .contact-info-upper-container {
@@ -224,6 +242,15 @@
             display: flex;
             align-items: center;
             margin: 1rem;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-info-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 123, 255, 0.2);
         }
         
         .contact-icon {
@@ -232,10 +259,42 @@
         
         /* Footer */
         footer {
-            background-color: #2c3e50;
-            color: #ecf0f1;
+            background-color: #f8f9fa;
+            color: #333;
             text-align: center;
             padding: 1rem;
+        }
+        
+        /* Advanced effects */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        section {
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .btn, .icon, .project-img {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::after, .icon::after, .project-img::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(45deg);
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover::after, .icon:hover::after, .project-img:hover::after {
+            left: 100%;
+            top: 100%;
         }
         
         /* Responsive design */
@@ -359,29 +418,4 @@
             <div class="details-container">
                 <img src="./impfiles/american airlines.png" alt="Project 2" class="project-img" />
                 <h3>American Airlines Baggage handling system</h3>
-                <p>Aimed to address the challenges faced by an airline company with a shortage of personnel and equipment in its BHS. Predicted and analyzed the number of baggage items that will arrive for any given outbound flight in Python using Xgboost, decision tree algorithms.</p>
-                <button class="btn btn-color-2" onclick="window.open('https://github.com/VishalVallapu/American-Airlines-BHS/')">
-                    Github
-                </button>
-            </div>
-            <div class="details-container">
-                <img src="./impfiles/pwc.jpeg" alt="PWC Power BI Internship" class="project-img" />
-                <h3>PWC Power BI Internship</h3>
-                <p>Demonstrated expertise in data visualization through the creation of Power BI dashboards that effectively conveyed KPIs, showcasing the ability to respond to client requests with well-designed solutions. Leveraged analytical problem-solving skills to examine HR data, particularly focusing on gender-related KPIs, and identified root causes for gender balance issues at the executive management level, highlighting a commitment to data-driven decision-making.</p>
-                <button class="btn btn-color-2" onclick="window.open('https://github.com/VishalVallapu/PWC-Power-BI-internship/')">
-                    Github
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2 class="title">Contact Me</h2>
-        <div class="contact-info-upper-container">
-            <div class="contact-info-container">
-                <img src="./impfiles/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-                <p><a href="mailto:vishalvallapu@gmail.com">vishalvallapu@gmail.com</a></p>
-            </div>
-            <div class="contact-info-container">
-                <img src="./impfiles/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-                <p><a href="https://www.linkedin.com/in/vishal-v-1a6632b6" target="_blank">LinkedIn</a></p
+                <p>Aimed to address the challenges faced by an airline company with a shortage of personnel and equipment in its BHS. Predicted an
